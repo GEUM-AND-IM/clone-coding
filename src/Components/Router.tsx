@@ -18,7 +18,7 @@ const Router = () => {
         <Route path="/" element={<Pages.Login />} />
         <Route path="/main"></Route>
       </Routes>
-        <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 };
