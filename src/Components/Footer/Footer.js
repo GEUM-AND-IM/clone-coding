@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Language from "./Language";
 
 // const FooterBar = styled.div`
 //   width: 100%;
@@ -49,21 +50,15 @@ position: absolute;
 
 
 const Footer = () => {
+    const Languages = ["English", "Deutsch", "Español", "Français", "Italiano", "日本語", "Polski" , "Português", "Русский", "Svenska", "Türkçe"]
+
   return (
     <FooterBottom>
       <Container>
         <Ulstyle>
-          <Listyle>English</Listyle>
-          <Listyle>Deutsch</Listyle>
-          <Listyle>Español</Listyle>    
-          <Listyle>Français</Listyle>
-          <Listyle>Italiano</Listyle>
-          <Listyle>日本語</Listyle>
-          <Listyle>Polski</Listyle>
-          <Listyle>Português</Listyle>
-          <Listyle>Русский</Listyle>
-          <Listyle>Svenska</Listyle>
-          <Listyle>Türkçe</Listyle>
+            {Languages.map((lang) =>{
+                return <Language language={lang}/>
+            })}
         </Ulstyle>
       </Container>
       <Ulstyle2>
