@@ -13,8 +13,8 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <Navigation />
       <Routes>
-        <Navigation />
         <Route path="/" element={<Pages.Login />} />
         <Route path="/main"></Route>
       </Routes>
