@@ -47,6 +47,7 @@ position: absolute;
   font-size: 12px;
 `
 
+
 const Footer = () => {
   return (
     <FooterBottom>
