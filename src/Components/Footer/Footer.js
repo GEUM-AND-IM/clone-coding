@@ -56,6 +56,7 @@ const Span = styled.span`
   right:300px;
 margin-top: 20px;
 `
+ 
 
 
 const Footer = () => {
