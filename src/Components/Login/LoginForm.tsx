@@ -1,6 +1,7 @@
+import useLogin from "src/Hooks/useLogin";
 import styled from "styled-components";
 
-const LoginWrap = styled.div`
+const LoginWrap = styled.form`
   display: flex;
   margin: auto;
   height: 357px;
@@ -54,17 +55,20 @@ const LoginSubmit = styled.button`
   border: 0px;
   font-weight: bold;
   border-radius: 3px;
+  cursor: pointer;
 `;
 
 const LoginForm: React.FC = () => {
+  const { onChangeId, onChangePw, onSubmit } = useLogin();
+
   return (
-    <LoginWrap>
+    <LoginWrap onSubmit={onSubmit}>
       <LoginTitle>로그인</LoginTitle>
       <LoginInputTitle>아이디</LoginInputTitle>
-      <LoginIdInput />
+      <LoginIdInput onChange={onChangeId} />
       <LoginInputTitle>비밀번호</LoginInputTitle>
-      <LoginPasswordInput />
-      <LoginSubmit>로그인</LoginSubmit>
+      <LoginPasswordInput onChange={onChangePw} />
+      <LoginSubmit type="submit">로그인</LoginSubmit>
     </LoginWrap>
   );
 };
