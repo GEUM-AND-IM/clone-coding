@@ -15,7 +15,7 @@ const NavigationItemWrap = styled.div`
   width: auto;
   height: 100%;
   margin-left: auto;
-  column-gap: 10px;
+  column-gap: 20px;
 `;
 
 const NavigationItem = styled.div`
@@ -30,6 +30,7 @@ const NavigationItemText = styled.p`
   margin: 0px;
   color: #fff;
   opacity: 0.85;
+  font-size: 14px;
   &:hover {
     color: #fff;
     opacity: 100%;
@@ -41,7 +42,7 @@ const NavigationLoginButton = styled.button`
   height: 40px;
   padding: 0px 18px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: bold;
   color: var(--main-dark-color);
   border-radius: 3px;
   border: 0px;

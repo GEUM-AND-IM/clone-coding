@@ -6,6 +6,7 @@ const HomeContainer = styled.div`
   height: auto;
   min-height: 700px;
   margin-top: 60px;
+  background-color: var(--main-dark-color);
 `;
 
 const HomePage: React.FC = () => {

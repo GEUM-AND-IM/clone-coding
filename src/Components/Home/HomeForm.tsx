@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HomeHero from "./HomeHero";
+import HomeList from "./HomeList";
 
 const HomeWrap = styled.div`
   width: 100%;
@@ -12,6 +13,7 @@ const HomeForm: React.FC = () => {
   return (
     <HomeWrap>
       <HomeHero />
+      <HomeList />
     </HomeWrap>
   );
 };

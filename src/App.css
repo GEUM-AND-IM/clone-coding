@@ -9,6 +9,7 @@ html {
   --main-background-color: #fafafa;
   --main-color: #d92323;
   --main-dark-color: #111;
+  --main-subDark-color: #222;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");

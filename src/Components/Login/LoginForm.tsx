@@ -5,7 +5,7 @@ const LoginWrap = styled.form`
   display: flex;
   margin: auto;
   height: 357px;
-  width: auto;
+  width: 370px;
   padding: 0px 15px;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ const LoginInputTitle = styled.h1`
 `;
 
 const LoginIdInput = styled.input`
-  width: 284px;
+  width: 100%;
   height: 40px;
   padding: 6px 12px;
   box-sizing: border-box;
@@ -34,7 +34,7 @@ const LoginIdInput = styled.input`
 `;
 
 const LoginPasswordInput = styled.input`
-  width: 284px;
+  width: 100%;
   height: 40px;
   padding: 6px 12px;
   box-sizing: border-box;
@@ -64,7 +64,7 @@ const LoginSubmit = styled.button`
 
 const LoginNotice = styled.p`
   margin: 0px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   margin-top: auto;
   margin-left: auto;

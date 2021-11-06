@@ -11,18 +11,14 @@ import Language from "./Language";
 // `;
 
 const FooterBottom = styled.div`
-  bottom: 0;
-  width: 100%;
-  height: 300px;
-  background-color: #111;
-  padding-top: 30px;
+  width: 1170px;
+  height: 90%;
+  background-color: var(--main-subDark-color);
+  padding: 60px 0px;
+  box-sizing: border-box;
   color: #666666;
-`;
-
-const Container = styled.div`
   display: flex;
-  position: absolute;
-  left: 300px;
+  flex-direction: column;
 `;
 
 const Listyle = styled.li`
@@ -35,27 +31,31 @@ const Listyle = styled.li`
 
 const Ulstyle = styled.ul`
   height: 50px;
-  margin-top: 20px;
   display: flex;
   font-size: 16px;
+  padding: 0px;
+  margin: 0px;
+`;
+
+const UIstyleWrap = styled.div`
+  display: flex;
 `;
 
 const Ulstyle2 = styled.ul`
-  position: absolute;
-  left: 300px;
-  padding-top: 60px;
+  margin: 0px;
+  margin-top: auto;
   font-size: 12px;
+  padding: 0px;
 `;
 
 const Span = styled.span`
   display: flex;
   align-items: top;
-  position: absolute;
-  right: 300px;
-  margin-top: 20px;
+  margin: 8px 0px;
+  margin-left: auto;
 `;
 
-const Footer = () => {
+const FooterForm = () => {
   const Languages = [
     "English",
     "Deutsch",
@@ -72,14 +72,14 @@ const Footer = () => {
 
   return (
     <FooterBottom>
-      <Container>
+      <UIstyleWrap>
         <Ulstyle>
           {Languages.map((lang) => {
             return <Language language={lang} />;
           })}
         </Ulstyle>
-      </Container>
-      <Span>Show your Music</Span>
+        <Span>Show your Music</Span>
+      </UIstyleWrap>
       <Ulstyle2>
         <Listyle>
           CBS Interactive © 2021 Last.fm Ltd. All rights reserved Terms of Use
@@ -96,4 +96,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterForm;
