@@ -17,7 +17,8 @@
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "typeRoots": ["./node_modules/@types", "@types"]
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx", "src/App.tsx"]

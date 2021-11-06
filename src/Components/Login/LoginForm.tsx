@@ -64,7 +64,7 @@ const LoginSubmit = styled.button`
 
 const LoginNotice = styled.p`
   margin: 0px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 300;
   margin-top: auto;
   margin-left: auto;
@@ -82,7 +82,7 @@ const LoginForm: React.FC = () => {
       <LoginPasswordInput onChange={onChangePw} />
       <LoginBottomWrap>
         <LoginSubmit type="submit">로그인</LoginSubmit>
-        <LoginNotice>도담도담 계정으로 이용 가능합니다.</LoginNotice>
+        <LoginNotice>※도담도담 계정으로 이용 가능합니다.</LoginNotice>
       </LoginBottomWrap>
     </LoginWrap>
   );
