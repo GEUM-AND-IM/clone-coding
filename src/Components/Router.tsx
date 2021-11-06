@@ -9,14 +9,15 @@ import Footer from "./Footer/Footer";
 const Router = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
+  setLogin(false);
 
   return (
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Pages.Login />} />
         <Route path="/main"></Route>
+        <Route path="/login" element={<Pages.Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>

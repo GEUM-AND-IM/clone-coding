@@ -1,3 +1,5 @@
+import { useRecoilState } from "recoil";
+import { isUser } from "src/Store/LoginAtom";
 import styled from "styled-components";
 
 const NavigationWrap = styled.nav`
@@ -32,7 +34,14 @@ const NavigationItemText = styled.p`
   }
 `;
 
+const NavigationLoginButton = styled.button`
+  width: 85px;
+  height: 40px;
+`;
+
 const NavigationForm: React.FC = () => {
+  const [login, setLogin] = useRecoilState<boolean>(isUser);
+
   return (
     <NavigationWrap>
       <NavigationItemWrap>
