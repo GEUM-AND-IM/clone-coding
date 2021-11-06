@@ -1,4 +1,4 @@
-import useLogin from "src/Hooks/useLogin";
+import useLogin from "src/Hooks/Login/useLogin";
 import styled from "styled-components";
 
 const LoginWrap = styled.form`
@@ -44,6 +44,10 @@ const LoginPasswordInput = styled.input`
   background-color: var(--main-background-color);
 `;
 
+const LoginBottomWrap = styled.div`
+  display: flex;
+`;
+
 const LoginSubmit = styled.button`
   width: 100px;
   height: 43px;
@@ -58,6 +62,14 @@ const LoginSubmit = styled.button`
   cursor: pointer;
 `;
 
+const LoginNotice = styled.p`
+  margin: 0px;
+  font-size: 11px;
+  font-weight: 300;
+  margin-top: auto;
+  margin-left: auto;
+`;
+
 const LoginForm: React.FC = () => {
   const { onChangeId, onChangePw, onSubmit } = useLogin();
 
@@ -68,7 +80,10 @@ const LoginForm: React.FC = () => {
       <LoginIdInput onChange={onChangeId} />
       <LoginInputTitle>비밀번호</LoginInputTitle>
       <LoginPasswordInput onChange={onChangePw} />
-      <LoginSubmit type="submit">로그인</LoginSubmit>
+      <LoginBottomWrap>
+        <LoginSubmit type="submit">로그인</LoginSubmit>
+        <LoginNotice>도담도담 계정으로 이용 가능합니다.</LoginNotice>
+      </LoginBottomWrap>
     </LoginWrap>
   );
 };

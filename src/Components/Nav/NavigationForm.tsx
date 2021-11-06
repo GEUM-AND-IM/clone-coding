@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
+import useNavigation from "src/Hooks/Nav/useNavigation";
 import { isUser } from "src/Store/LoginAtom";
 import styled from "styled-components";
 
@@ -37,10 +39,22 @@ const NavigationItemText = styled.p`
 const NavigationLoginButton = styled.button`
   width: 85px;
   height: 40px;
+  padding: 0px 18px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--main-dark-color);
+  border-radius: 3px;
+  border: 0px;
+  background-color: #e3e3e3;
+  cursor: pointer;
+  &:hover {
+    background-color: #eee;
+  }
 `;
 
 const NavigationForm: React.FC = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
+  const { pushLogin } = useNavigation();
 
   return (
     <NavigationWrap>
@@ -51,6 +65,11 @@ const NavigationForm: React.FC = () => {
         <NavigationItem>
           <NavigationItemText>Musics</NavigationItemText>
         </NavigationItem>
+        {!login && (
+          <NavigationLoginButton onClick={pushLogin}>
+            LOG IN
+          </NavigationLoginButton>
+        )}
       </NavigationItemWrap>
     </NavigationWrap>
   );

@@ -11,10 +11,9 @@ import Language from "./Language";
 // `;
 
 const FooterBottom = styled.div`
-  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-color: #111;
   padding-top: 30px;
   color: #666666;
@@ -29,11 +28,10 @@ const Container = styled.div`
 const Listyle = styled.li`
   list-style: none;
   margin: 8px;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
-
 
 const Ulstyle = styled.ul`
   height: 50px;
@@ -43,39 +41,56 @@ const Ulstyle = styled.ul`
 `;
 
 const Ulstyle2 = styled.ul`
-position: absolute;
+  position: absolute;
   left: 300px;
   padding-top: 60px;
   font-size: 12px;
-  `
+`;
 
 const Span = styled.span`
   display: flex;
   align-items: top;
   position: absolute;
-  right:300px;
-margin-top: 20px;
-`
- 
-
+  right: 300px;
+  margin-top: 20px;
+`;
 
 const Footer = () => {
-    const Languages = ["English", "Deutsch", "Español", "Français", "Italiano", "日本語", "Polski" , "Português", "Русский", "Svenska", "Türkçe"];
+  const Languages = [
+    "English",
+    "Deutsch",
+    "Español",
+    "Français",
+    "Italiano",
+    "日本語",
+    "Polski",
+    "Português",
+    "Русский",
+    "Svenska",
+    "Türkçe",
+  ];
 
   return (
     <FooterBottom>
       <Container>
         <Ulstyle>
-            {Languages.map((lang) =>{
-                return <Language language={lang}/>
-            })}
+          {Languages.map((lang) => {
+            return <Language language={lang} />;
+          })}
         </Ulstyle>
       </Container>
-            <Span>Show your Music</Span>
+      <Span>Show your Music</Span>
       <Ulstyle2>
-        <Listyle>CBS Interactive © 2021 Last.fm Ltd. All rights reserved Terms of Use Privacy Policy Legal Policies Cookies Policy Do Not Sell My Personal Information</Listyle>
+        <Listyle>
+          CBS Interactive © 2021 Last.fm Ltd. All rights reserved Terms of Use
+          Privacy Policy Legal Policies Cookies Policy Do Not Sell My Personal
+          Information
+        </Listyle>
         <Listyle> Jobs at ViacomCBS Last.fm Music</Listyle>
-        <Listyle>Happiness can be found even in the darkest of times,if one only remembers to turn on the light</Listyle>
+        <Listyle>
+          Happiness can be found even in the darkest of times,if one only
+          remembers to turn on the light
+        </Listyle>
       </Ulstyle2>
     </FooterBottom>
   );
