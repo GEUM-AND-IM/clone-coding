@@ -4,19 +4,17 @@ import { useRecoilState } from "recoil";
 import * as Pages from "../Pages/index";
 import Navigation from "src/Pages/Nav/Navigation";
 import { isUser } from "src/Store/LoginAtom";
-import Footer from "./Footer/Footer";
+import Footer from "src/Pages/Footer/Footer";
 
 const Router = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
-
-  useEffect(() => {}, []);
-
   return (
     <BrowserRouter>
+      <Navigation />
       <Routes>
-        <Navigation />
-        <Route path="/" element={<Pages.Login />} />
+        <Route path="/" element={<Pages.Home />}></Route>
         <Route path="/main"></Route>
+        <Route path="/login" element={<Pages.Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>
