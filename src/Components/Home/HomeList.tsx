@@ -34,6 +34,7 @@ const HomeListSubTitle = styled.p`
 
 const HomeListItemWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const genres = [

@@ -1,18 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Listyle = styled.li`
   list-style: none;
-  margin: 8px;
-  &:hover{
+  font-size: 14px;
+  &:hover {
     text-decoration: underline;
   }
 `;
 
-const Language = ({language}) => {
-    return (
-            <Listyle>{language}</Listyle>
-    );
+const Language = ({ language }) => {
+  return <Listyle>{language}</Listyle>;
 };
 
 export default Language;
