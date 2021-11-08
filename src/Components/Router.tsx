@@ -13,7 +13,7 @@ const Router = () => {
       <Navigation />
       <Routes>
         <Route path="/" element={<Pages.Home />}></Route>
-        <Route path="/main"></Route>
+        <Route path="/main" element={<Pages.Main />}></Route>
         <Route path="/login" element={<Pages.Login />} />
       </Routes>
       <Footer />

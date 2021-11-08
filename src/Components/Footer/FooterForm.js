@@ -23,9 +23,6 @@ const FooterBottom = styled.div`
 const Listyle = styled.li`
   list-style: none;
   margin: 8px 0px;
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const Ulstyle = styled.ul`
