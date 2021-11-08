@@ -5,7 +5,7 @@ const LoginWrap = styled.form`
   display: flex;
   margin: auto;
   height: 357px;
-  width: 370px;
+  width: auto;
   padding: 0px 15px;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ const LoginInputTitle = styled.h1`
 `;
 
 const LoginIdInput = styled.input`
-  width: 100%;
+  width: 284px;
   height: 40px;
   padding: 6px 12px;
   box-sizing: border-box;
@@ -34,7 +34,7 @@ const LoginIdInput = styled.input`
 `;
 
 const LoginPasswordInput = styled.input`
-  width: 100%;
+  width: 284px;
   height: 40px;
   padding: 6px 12px;
   box-sizing: border-box;
@@ -42,10 +42,6 @@ const LoginPasswordInput = styled.input`
   border: 1px solid var(--main-border-color);
   border-radius: 3px;
   background-color: var(--main-background-color);
-`;
-
-const LoginBottomWrap = styled.div`
-  display: flex;
 `;
 
 const LoginSubmit = styled.button`
@@ -62,14 +58,6 @@ const LoginSubmit = styled.button`
   cursor: pointer;
 `;
 
-const LoginNotice = styled.p`
-  margin: 0px;
-  font-size: 12px;
-  font-weight: 300;
-  margin-top: auto;
-  margin-left: auto;
-`;
-
 const LoginForm: React.FC = () => {
   const { onChangeId, onChangePw, onSubmit } = useLogin();
 
@@ -80,10 +68,7 @@ const LoginForm: React.FC = () => {
       <LoginIdInput onChange={onChangeId} />
       <LoginInputTitle>비밀번호</LoginInputTitle>
       <LoginPasswordInput onChange={onChangePw} />
-      <LoginBottomWrap>
-        <LoginSubmit type="submit">로그인</LoginSubmit>
-        <LoginNotice>※도담도담 계정으로 이용 가능합니다.</LoginNotice>
-      </LoginBottomWrap>
+      <LoginSubmit type="submit">로그인</LoginSubmit>
     </LoginWrap>
   );
 };
