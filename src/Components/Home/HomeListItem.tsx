@@ -1,3 +1,4 @@
+import useSelectGenre from "src/Hooks/Home/Hero/useSelectGenre";
 import styled from "styled-components";
 
 interface HomeListItemProps {
@@ -49,8 +50,10 @@ const HomeListItemImg = styled.img`
 `;
 
 const HomeListItem = ({ text, img }: HomeListItemProps): JSX.Element => {
+  const { selectGenre } = useSelectGenre();
+
   return (
-    <HomeListITemContainer>
+    <HomeListITemContainer onClick={() => selectGenre(text)}>
       <HomeListItemText>{text}</HomeListItemText>
       <HomeListItemImgWrap>
         <HomeListItemImg src={img} />
