@@ -4,6 +4,7 @@ interface GenreItemProps {
   title: string;
   subTitle: string;
   explain: string;
+  img: string;
 }
 
 const HomeGenreItemWrap = styled.div`
@@ -11,6 +12,7 @@ const HomeGenreItemWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const HomeGenreItemTitle = styled.p`
@@ -23,7 +25,8 @@ const HomeGenreItemTitle = styled.p`
 
 const HomeGenreItemSubTitle = styled.p`
   font-size: 20px;
-  color: white;
+  color: var(--main-color);
+  font-weight: bold;
   opacity: 0.85;
   margin: 0px;
   text-align: start;
@@ -41,16 +44,41 @@ const HomeGenreItemExplain = styled.p`
   overflow: hidden;
 `;
 
+const HomeGenreItemImgWrap = styled.div`
+  width: 310px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border: 1px solid;
+  border: 1px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+`;
+
+const HomeGenreItemImg = styled.img`
+  width: 98%;
+  height: 98%;
+  object-fit: cover;
+  border-radius: 3px;
+`;
+
 const HomeGenreItem = ({
   title,
   subTitle,
   explain,
+  img,
 }: GenreItemProps): JSX.Element => {
   return (
     <HomeGenreItemWrap>
       <HomeGenreItemTitle>{title}</HomeGenreItemTitle>
       <HomeGenreItemSubTitle>{subTitle}</HomeGenreItemSubTitle>
       <HomeGenreItemExplain>{explain}</HomeGenreItemExplain>
+      <HomeGenreItemImgWrap>
+        <HomeGenreItemImg src={img} />
+      </HomeGenreItemImgWrap>
     </HomeGenreItemWrap>
   );
 };

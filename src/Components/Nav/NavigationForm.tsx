@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
 import useNavigation from "src/Hooks/Nav/useNavigation";
 import { isUser } from "src/Store/LoginAtom";
 import styled from "styled-components";
+import { CLIENTID, REDIRECTURL } from "../../config/config.json";
 
 const NavigationWrap = styled.nav`
   width: 100%;
@@ -55,7 +55,7 @@ const NavigationLoginButton = styled.button`
 
 const NavigationForm: React.FC = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
-  const { pushLogin, pushMain, pushHome } = useNavigation();
+  const { pushHome } = useNavigation();
 
   return (
     <NavigationWrap>
@@ -67,9 +67,12 @@ const NavigationForm: React.FC = () => {
           <NavigationItemText>Musics</NavigationItemText>
         </NavigationItem>
         {!login && (
-          <NavigationLoginButton onClick={pushLogin}>
-            LOG IN
-          </NavigationLoginButton>
+          <a
+            href={`http://dauth.b1nd.com/login?client_id=${CLIENTID}&redirect_uri=${REDIRECTURL}`}
+            rel="noreferrer"
+          >
+            <NavigationLoginButton>LOG IN</NavigationLoginButton>{" "}
+          </a>
         )}
       </NavigationItemWrap>
     </NavigationWrap>

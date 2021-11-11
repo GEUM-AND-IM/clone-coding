@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import * as Pages from "../Pages/index";
@@ -13,8 +12,8 @@ const Router = () => {
       <Navigation />
       <Routes>
         <Route path="/" element={<Pages.Home />}></Route>
-        <Route path="/main"></Route>
-        <Route path="/login" element={<Pages.Login />} />
+        <Route path="/musics"></Route>
+        <Route path="/main" element={<Pages.Login />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
