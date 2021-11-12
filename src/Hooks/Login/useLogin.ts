@@ -16,12 +16,10 @@ const useLogin = () => {
 
   const getToken = async () => {
     console.log("ASDadsa");
-    const { data } = await GETTOKEN(query); // const { data } = await GETTOKEN(query);
+    const token = await GETTOKEN(query); // const { data } = await GETTOKEN(query);
     // setUserData(data.user);
-    console.log(data);
+    console.log(token);
     // window.localStorage.setItem("access_token", data.token);
-    console.log(data);
-
     window.location.replace("/musics");
   };
 
