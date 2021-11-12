@@ -55,7 +55,7 @@ const NavigationLoginButton = styled.button`
 
 const NavigationForm: React.FC = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
-  const { pushHome } = useNavigation();
+  const { pushHome, pushMusics } = useNavigation();
 
   return (
     <NavigationWrap>
@@ -64,7 +64,7 @@ const NavigationForm: React.FC = () => {
           <NavigationItemText onClick={pushHome}>Home</NavigationItemText>
         </NavigationItem>
         <NavigationItem>
-          <NavigationItemText onClick={pushMain}>Musics</NavigationItemText>
+          <NavigationItemText onClick={pushMusics}>Musics</NavigationItemText>
         </NavigationItem>
         {!login && (
           <a

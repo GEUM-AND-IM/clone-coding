@@ -1,10 +1,10 @@
 import useLink from "../HandleLink/useLink";
 
 const useNavigation = () => {
-  const { handleLink: pushMain } = useLink("/main");
+  const { handleLink: pushMusics } = useLink("/musics");
   const { handleLink: pushHome } = useLink("/");
 
-  return { pushMain, pushHome };
+  return { pushMusics, pushHome };
 };
 
 export default useNavigation;
