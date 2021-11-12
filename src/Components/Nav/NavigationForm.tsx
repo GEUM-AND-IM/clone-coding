@@ -64,7 +64,7 @@ const NavigationForm: React.FC = () => {
           <NavigationItemText onClick={pushHome}>Home</NavigationItemText>
         </NavigationItem>
         <NavigationItem>
-          <NavigationItemText>Musics</NavigationItemText>
+          <NavigationItemText onClick={pushMain}>Musics</NavigationItemText>
         </NavigationItem>
         {!login && (
           <a
