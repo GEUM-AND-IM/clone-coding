@@ -1,10 +1,14 @@
 import MusicList from "./MainMusicList";
 import styled from "styled-components";
 import MainNavImg from "../../asset/img/MainNav.jpg";
+import MainMusicItemsWrap from "./MainMusicItemsWrap";
 
 const MainWrap = styled.div`
   width: 100%;
-  height: 2000px;
+  height: auto;
+  padding-bottom: 110px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainNav = styled.nav`
@@ -21,19 +25,22 @@ const MainNav = styled.nav`
 `;
 
 const MainNavItemWrap = styled.div`
-  width: 1170px;
+  width: 1200px;
   height: 100%;
   position: relative;
   background: none;
   display: flex;
   align-items: center;
+  column-gap: 10px;
 `;
 
 const MainNavTitle = styled.h1`
   color: white;
   font-size: 30px;
-  margin-right: auto;
   font-weight: bold;
+  vertical-align: middle;
+  height: 30px;
+  line-height: 30px;
 `;
 
 const MainNavSpanWrap = styled.ul`
@@ -68,13 +75,14 @@ const MainMusicForm = () => {
       <MainNav>
         <MainNavItemWrap>
           <MainNavTitle>Musics</MainNavTitle>
+          <MusicList />
           <MainNavSpanWrap>
             <MainNavSpan>Music List</MainNavSpan>
           </MainNavSpanWrap>
         </MainNavItemWrap>
       </MainNav>
       <MainNavFooter />
-      <MusicList />
+      <MainMusicItemsWrap />
     </MainWrap>
   );
 };
