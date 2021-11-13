@@ -1,17 +1,12 @@
-import LoginForm from "src/Components/Login/LoginForm";
-import styled from "styled-components";
-
-const LoginContainer = styled.div`
-  width: 100%;
-  height: 704px;
-  display: flex;
-`;
+import useLogin from "src/Hooks/Login/useLogin";
 
 const LoginPage: React.FC = () => {
+  const { onSubmit } = useLogin();
+
   return (
-    <LoginContainer>
-      <LoginForm />
-    </LoginContainer>
+    <>
+      <div>Loading...</div>
+    </>
   );
 };
 
