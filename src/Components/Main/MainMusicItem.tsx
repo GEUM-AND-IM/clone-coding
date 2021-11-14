@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PlayImg from "../../asset/img/Play.png";
 
 interface IMusicDataProps {
   musicData: any[];
@@ -26,10 +27,50 @@ const MainMusicItemImgWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const MainMusicItemImg = styled.img`
   width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+`;
+const MainMusicUrlBtnBox = styled.div`
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  display: none;
+`;
+
+const MainMusicUrlBtn = styled.button`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: none;
+  outline: none;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    ${MainMusicUrlBtnBox} {
+      display: flex;
+    }
+  }
+`;
+
+const MainMusicUrlBtnImg = styled.img`
+  width: 50%;
 `;
 
 const MainMusicItemName = styled.h3`
@@ -60,6 +101,11 @@ const MainMusicItem = (Props: IMusicDataProps2): JSX.Element => {
   return (
     <MainMusicItemBox>
       <MainMusicItemImgWrap>
+        <MainMusicUrlBtn onClick={() => window.open(url)}>
+          <MainMusicUrlBtnBox>
+            <MainMusicUrlBtnImg src={PlayImg} />
+          </MainMusicUrlBtnBox>
+        </MainMusicUrlBtn>
         <MainMusicItemImg src={image} />
       </MainMusicItemImgWrap>
       <MainMusicItemName>{name}</MainMusicItemName>
