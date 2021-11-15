@@ -113,8 +113,8 @@ const FooterForm = () => {
       <FooterBottom>
         <UIstyleWrap>
           <Ulstyle>
-            {Languages.map((lang) => {
-              return <Language language={lang} />;
+            {Languages.map((lang, index) => {
+              return <Language language={lang} key={index} />;
             })}
           </Ulstyle>
           <Span>Show your Music</Span>

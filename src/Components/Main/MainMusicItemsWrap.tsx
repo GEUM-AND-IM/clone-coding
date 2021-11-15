@@ -21,7 +21,6 @@ const MainMusicItemsWrap: React.FC = () => {
     <MainMusicListWrap>
       {musicData.map((item, index) => {
         const { artist, image, listeners, name, url } = item;
-        console.log(name, artist);
         const mediumImage = image[1];
         return (
           <MainMusicItem

@@ -51,8 +51,8 @@ const HomeList: React.FC = () => {
       <HomeListSubTitle>여기 여러 장르들이 나열되어 있습니다.</HomeListSubTitle>
       <HomeListSubTitle>장르들을 확인해보세요!</HomeListSubTitle>
       <HomeListItemWrap>
-        {genres.map((genre) => {
-          return <HomeListItem text={genre.text} img={genre.img} />;
+        {genres.map((genre, index) => {
+          return <HomeListItem text={genre.text} img={genre.img} key={index} />;
         })}
       </HomeListItemWrap>
     </HomeListWrap>

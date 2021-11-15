@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import PlayImg from "../../asset/img/Play.png";
 
-interface IMusicDataProps {
-  musicData: any[];
-}
-
 interface IMusicDataProps2 {
   artist: string;
   image: string;
