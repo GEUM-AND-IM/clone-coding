@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { keywordData, submitKeywordData } from "src/Store/KeywordAtom";
 
@@ -19,10 +19,6 @@ const useSearch = () => {
     setSubmitKeyword(keyword);
     resetKeyword();
   };
-
-  useEffect(() => {
-    console.log(keyword, submitKeyword);
-  }, [keyword, submitKeyword]);
 
   return {
     onChangeKeyword,
