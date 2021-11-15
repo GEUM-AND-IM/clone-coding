@@ -7,20 +7,21 @@ const NavUserForm: React.FC = () => {
   const [click, setClick] = useState(false);
 
   const handleClickOutside = (e: MouseEvent): void => {
-    if (modalEl.current && modalEl.current.contains(e.target as Node)) {
+    if (modalEl.current && !modalEl.current.contains(e.target as Node)) {
       setClick(false);
     }
   };
 
   return (
     <>
-      <NavigationUserContainer onClick={() => setClick((prev) => !prev)}>
-        <NavUserModal
-          show={click}
-          outSideRef={modalEl}
-          onClickOutside={handleClickOutside}
-        />
-      </NavigationUserContainer>
+      <NavigationUserContainer
+        onClick={() => setClick((prev) => !prev)}
+      ></NavigationUserContainer>
+      <NavUserModal
+        show={click}
+        outSideRef={modalEl}
+        onClickOutside={handleClickOutside}
+      />
     </>
   );
 };
