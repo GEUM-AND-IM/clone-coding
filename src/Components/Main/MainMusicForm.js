@@ -2,6 +2,7 @@ import MusicList from "./MainMusicList";
 import styled from "styled-components";
 import MainNavImg from "../../asset/img/MainNav.jpg";
 import MainMusicItemsWrap from "./MainMusicItemsWrap";
+import MainSearchForm from "./MainSearchForm";
 
 const MainWrap = styled.div`
   width: 100%;
@@ -67,6 +68,7 @@ const MainNavFooter = styled.div`
   width: 100%;
   height: 110px;
   border-bottom: 1px solid var(--main-border-color);
+  position: relative;
 `;
 
 const MainMusicForm = () => {
@@ -81,7 +83,9 @@ const MainMusicForm = () => {
           </MainNavSpanWrap>
         </MainNavItemWrap>
       </MainNav>
-      <MainNavFooter />
+      <MainNavFooter>
+        <MainSearchForm />
+      </MainNavFooter>
       <MainMusicItemsWrap />
     </MainWrap>
   );
