@@ -7,9 +7,10 @@ html {
 :root {
   --main-border-color: #dbdbdb;
   --main-background-color: #fafafa;
-  --main-color: #d92323;
+  --main-color: #b90000;
   --main-dark-color: #111;
   --main-subDark-color: #222;
+  --color: rgba(192, 192, 192, 0.133);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");

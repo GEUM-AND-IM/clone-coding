@@ -1,35 +1,39 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
-import { useRecoilState, useResetRecoilState } from "recoil";
-import { idState, pwState } from "src/Store/LoginAtom";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
+import { useRecoilState } from "recoil";
+import { GETUSER } from "src/Lib/API/GetUserApi";
+import { GETTOKEN } from "src/Lib/API/TokenApi";
+import Token from "src/Lib/Token";
+import { isUser } from "src/Store/LoginAtom";
+import { profileData } from "src/Store/ProfileAtom";
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
 const useLogin = () => {
-  const [id, setId] = useRecoilState(idState);
-  const [pw, setPw] = useRecoilState(pwState);
-  const resetId = useResetRecoilState(idState);
-  const resetPw = useResetRecoilState(pwState);
+  const [login, setLogin] = useRecoilState<boolean>(isUser);
+  const [userData, setUserData] = useRecoilState(profileData);
 
-  const onChangeId = (e: ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value },
-    } = e;
+  const query = String(useQuery()).slice(5, 41);
 
-    setId(value);
-  };
-
-  const onChangePw = (e: ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value },
-    } = e;
-    setPw(value);
+  const getToken = async () => {
+    const token = await GETTOKEN(query);
+    window.localStorage.setItem("access_token", token.access_token);
+    // const user = await GETUSER(token.access_token);
+    // console.log(user);
+    window.location.replace("/musics");
   };
 
   const onSubmit = (e: any) => {
     e.preventDefault();
   };
 
+  useEffect(() => {
+    getToken();
+  }, []);
+
   return {
-    onChangeId,
-    onChangePw,
     onSubmit,
   };
 };

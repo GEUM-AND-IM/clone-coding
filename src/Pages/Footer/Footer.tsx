@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 const FooterContainer = styled.div`
   width: 100%;
-  height: 390px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--main-subDark-color);
+  padding: 48px 0px;
 `;
 
 const Footer: React.FC = () => {

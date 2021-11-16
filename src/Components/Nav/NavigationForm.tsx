@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
 import useNavigation from "src/Hooks/Nav/useNavigation";
 import { isUser } from "src/Store/LoginAtom";
 import styled from "styled-components";
+import { CLIENTID, REDIRECTURL } from "../../config/config.json";
+import NavUserForm from "./UserForm/NavUserForm";
 
 const NavigationWrap = styled.nav`
   width: 100%;
@@ -16,6 +17,7 @@ const NavigationItemWrap = styled.div`
   height: 100%;
   margin-left: auto;
   column-gap: 20px;
+  align-items: center;
 `;
 
 const NavigationItem = styled.div`
@@ -55,7 +57,7 @@ const NavigationLoginButton = styled.button`
 
 const NavigationForm: React.FC = () => {
   const [login, setLogin] = useRecoilState<boolean>(isUser);
-  const { pushLogin, pushMain, pushHome } = useNavigation();
+  const { pushHome, pushMusics } = useNavigation();
 
   return (
     <NavigationWrap>
@@ -64,12 +66,17 @@ const NavigationForm: React.FC = () => {
           <NavigationItemText onClick={pushHome}>Home</NavigationItemText>
         </NavigationItem>
         <NavigationItem>
-          <NavigationItemText>Musics</NavigationItemText>
+          <NavigationItemText onClick={pushMusics}>Musics</NavigationItemText>
         </NavigationItem>
-        {!login && (
-          <NavigationLoginButton onClick={pushLogin}>
-            LOG IN
-          </NavigationLoginButton>
+        {!login ? (
+          <a
+            href={`http://dauth.b1nd.com/login?client_id=${CLIENTID}&redirect_uri=${REDIRECTURL}`}
+            rel="noreferrer"
+          >
+            <NavigationLoginButton>LOG IN</NavigationLoginButton>{" "}
+          </a>
+        ) : (
+          <NavUserForm />
         )}
       </NavigationItemWrap>
     </NavigationWrap>

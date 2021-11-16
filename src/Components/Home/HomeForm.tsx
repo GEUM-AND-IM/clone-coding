@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import HomeCurrentGenre from "./HomeCurrentGenre";
+import HomeGenreForm from "./HomeGenreForm";
 import HomeHero from "./HomeHero";
 import HomeList from "./HomeList";
 
@@ -14,6 +16,8 @@ const HomeForm: React.FC = () => {
     <HomeWrap>
       <HomeHero />
       <HomeList />
+      <HomeCurrentGenre />
+      <HomeGenreForm />
     </HomeWrap>
   );
 };
